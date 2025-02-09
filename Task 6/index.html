@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="title">Registration Form</h1>
+    <p id="description">Registration will be closed soon</p>
+    <form id="survey-form" method="POST">
+      <fieldset>
+        <label id="name-label">
+          Enter your name:<input
+            type="text"
+            id="name"
+            placeholder="Harry Potter"
+            required
+        /></label>
+
+        <label id="email-label"
+          >Enter your Email:<input
+            type="email"
+            placeholder="Harrypotter@gmail.com"
+            id="email"
+            required
+        /></label>
+
+        <label id="number-label"
+          >Enter your age:<input
+            type="number"
+            min="12"
+            max="80"
+            id="number"
+            placeholder="20"
+            required
+        /></label>
+      </fieldset>
+      <fieldset>
+        <label class="inline" id="gender"
+          >Gender:<br />
+          <input
+            class="inline"
+            type="radio"
+            name="gender"
+            value="male"
+            required
+          />
+          Male <br />
+          <input
+            type="radio"
+            class="inline"
+            name="gender"
+            value="female"
+            required
+          />
+          Female
+        </label>
+      </fieldset>
+      <fieldset>
+        <label
+          >Hobbies <br /><input
+            value="hobbies"
+            class="inline"
+            type="checkbox"
+          />Playing Cricket<br />
+          <input value="hobbies" class="inline" type="checkbox" />Singing<br />
+          <input value="hobbies" class="inline" type="checkbox" />Reading<br />
+        </label>
+      </fieldset>
+      <fieldset>
+        <label>
+          Address:
+          <textarea></textarea>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label
+          >How Did you find us?
+          <select id="dropdown" required>
+            <option value="">Select an option</option>
+            <option value="youtube">Youtube</option>
+            <option value="instagram">Instagram</option>
+            <option value="google">Google</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+      </fieldset>
+      <input id="submit" type="submit" />
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>

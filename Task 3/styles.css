@@ -1,0 +1,49 @@
+body {
+  background-color: #bebebe;
+}
+.album-container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+}
+
+.album-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.album {
+  margin: 10px;
+  text-align: center;
+}
+
+.album img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.album img:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+  transition: all 0.2s;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .album img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .album img {
+    max-width: 100px;
+  }
+}

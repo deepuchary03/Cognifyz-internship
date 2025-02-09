@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Task 4</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      button {
+        display: block;
+        padding: 15px 30px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      }
+      button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      }
+      button:active {
+        background-color: #004494;
+        transform: scale(0.95);
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="changeBackground()">Change Background</button>
+    <script>
+      function changeBackground() {
+        if (document.body.style.backgroundColor === "skyblue") {
+          document.body.style.backgroundColor = "";
+        } else {
+          document.body.style.backgroundColor = "skyblue";
+        }
+      }
+    </script>
+  </body>
+</html>
