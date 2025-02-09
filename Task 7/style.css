@@ -1,0 +1,14 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f9fa;
+}
+.navbar-custom {
+  background-color: #1a1a1a;
+}
+.carousel-item img {
+  max-height: 500px;
+  object-fit: cover;
+}
+#grammy-carousel {
+  margin-top: 20px;
+}
