@@ -1,51 +1,57 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("survey-form");
+document.getElementById("myForm").addEventListener("submit", function (event) {
+  let isValid = true;
+  clearErrors();
 
-  form.addEventListener("submit", function (event) {
-    let valid = true;
-    let messages = [];
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let age = document.getElementById("age").value;
+  let gender = document.getElementById("gender").value;
+  let address = document.getElementById("address").value;
 
-    // Validate name
-    const name = document.getElementById("name").value;
-    if (name.trim() === "") {
-      messages.push("Name is required.");
-      valid = false;
-    }
+  if (name.trim() === "") {
+    isValid = false;
+    displayError("name", "Name is required");
+  }
 
-    // Validate email
-    const email = document.getElementById("email").value;
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailPattern.test(email)) {
-      messages.push("Invalid email address.");
-      valid = false;
-    }
+  if (email.trim() === "" || !validateEmail(email)) {
+    isValid = false;
+    displayError("email", "Valid email is required");
+  }
 
-    // Validate number (age)
-    const number = document.getElementById("number").value;
-    if (number < 12 || number > 80 || isNaN(number)) {
-      messages.push("Age must be between 12 and 80.");
-      valid = false;
-    }
+  if (age !== "" && (age < 0 || age > 150)) {
+    isValid = false;
+    displayError("age", "Age must be between 0 and 150");
+  }
 
-    // Validate gender
-    const gender = document.querySelector('input[name="gender"]:checked');
-    if (!gender) {
-      messages.push("Gender is required.");
-      valid = false;
-    }
+  if (gender.trim() === "") {
+    isValid = false;
+    displayError("gender", "Gender is required");
+  }
 
-    // Validate how did you find us
-    const dropdown = document.getElementById("dropdown").value;
-    if (dropdown === "") {
-      messages.push("Please select how you found us.");
-      valid = false;
-    }
+  if (address.trim() === "") {
+    isValid = false;
+    displayError("address", "Address is required");
+  }
 
-    console.log("Validation messages:", messages);
-
-    if (!valid) {
-      event.preventDefault();
-      alert(messages.join("\n"));
-    }
-  });
+  if (!isValid) {
+    event.preventDefault();
+  }
 });
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function displayError(fieldId, message) {
+  let field = document.getElementById(fieldId);
+  let errorDiv = document.createElement("div");
+  errorDiv.className = "error";
+  errorDiv.innerText = message;
+  field.parentNode.insertBefore(errorDiv, field.nextSibling);
+}
+
+function clearErrors() {
+  let errors = document.querySelectorAll(".error");
+  errors.forEach((error) => error.remove());
+}
