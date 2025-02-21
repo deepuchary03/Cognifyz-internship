@@ -1,0 +1,56 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$background-color: #f4f4f4;
+$text-color: #333;
+$header-bg-color: $secondary-color;
+$header-text-color: white;
+
+@mixin box-shadow {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  background-color: $header-bg-color;
+  color: $header-text-color;
+  padding: 20px;
+  text-align: center;
+  @include box-shadow;
+}
+
+h1 {
+  margin: 0;
+}
+
+section {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  @include box-shadow;
+}
+
+h2 {
+  color: $primary-color;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
